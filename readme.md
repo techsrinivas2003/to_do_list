@@ -1,6 +1,6 @@
 # DevOps Intern Case Study: CI/CD with Containerization and Basic Infrastructure Automation
 
-This project demonstrates the process of containerizing a Flask application, setting up a CI/CD pipeline for automated deployments, and managing infrastructure with Terraform.
+This project demonstrates the process of containerizing a TO-DO List Flask application, setting up a CI/CD pipeline for automated deployments, and managing infrastructure with Terraform.
 
 ## Features
 
