@@ -1,0 +1,85 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            width: 300px;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px 0;
+            font-size: 18px;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #6c757d;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>To-Do List</h1>
+
+    <!-- Add Task Form -->
+    <form action="/add" method="POST">
+        <input type="text" name="task" placeholder="Enter new task" required>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <h2>Tasks</h2>
+    <ul>
+        <!-- Loop through tasks and display them -->
+        {% for task in tasks %}
+            <li>
+                <!-- If the task is completed, apply the "completed" class -->
+                <span class="{{ 'completed' if task.completed else '' }}">{{ task.task }}</span>
+                
+                <!-- If the task is not completed, show the 'Complete' link -->
+                {% if not task.completed %}
+                    <a href="/complete/{{ task.id }}">[Complete]</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
