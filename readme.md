@@ -71,7 +71,7 @@ This project demonstrates the process of containerizing a TO-DO List Flask appli
     ```bash
     docker run -p 5000:5000 your-dockerhub-username/todo-list-flask
     ```
-![Alt text](Screenshot 2025-04-09 151635.png)
+  ![Alt text](Screenshot 2025-04-09 151635.png)
 
 
 3. Visit `http://127.0.0.1:5000` to access the app running inside Docker.
